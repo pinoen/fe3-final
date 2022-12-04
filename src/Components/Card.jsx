@@ -1,22 +1,46 @@
+import { Card, Button, CardActions, CardContent, Typography } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 
 
-const Card = ({ name, username, id }) => {
+const DentistCard = ({ name, username, id }) => {
 
-  const addFav = ()=>{
-    // Aqui iria la logica para agregar la Card en el localStorage
+  const addFav = () => {
+
+    const dentistData = {
+      id: id,
+      name: name,
+      username: username
+    }
+
+    localStorage.setItem('favs', JSON.stringify(dentistData))
   }
 
   return (
     <div className="card">
-        {/* En cada card deberan mostrar en name - username y el id */}
+      <Card sx={{ minWidth: 275 }}>
+        <CardContent>
+          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+            Dentist ID: {id}
+          </Typography>
+          <Typography variant="h5" component="div">
+            {name}
+          </Typography>
+          <Typography sx={{ mb: 1.5 }} color="text.secondary">
+            Full name
+          </Typography>
+          <Typography variant="body1">
+            username: {username}
+          </Typography>
+        </CardContent>
 
-        {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
-
-        {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-        <button onClick={addFav} className="favButton">Add fav</button>
+        <CardActions sx={{ display: 'flex', justifyContent: 'space-between' }}>
+          <Link to={`/dentist/${id}`}>See details</Link>
+        </CardActions>
+      </Card>
+      <button onClick={addFav} className="favButton">Add fav</button>
     </div>
   );
 };
 
-export default Card;
+export default DentistCard;
