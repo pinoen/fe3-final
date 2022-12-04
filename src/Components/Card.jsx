@@ -1,4 +1,4 @@
-import { Card, Button, CardActions, CardContent, Typography } from "@mui/material";
+import { Card, CardActions, CardContent, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -7,13 +7,20 @@ const DentistCard = ({ name, username, id }) => {
 
   const addFav = () => {
 
-    const dentistData = {
+    let dentistData = {
       id: id,
       name: name,
       username: username
     }
 
-    localStorage.setItem('favs', JSON.stringify(dentistData))
+    if (localStorage.getItem('favs') == null) {
+      localStorage.setItem('favs', '[]');
+    }
+
+    let data = JSON.parse(localStorage.getItem('favs'))
+    data.push(dentistData)
+
+    localStorage.setItem('favs', JSON.stringify(data))
   }
 
   return (
