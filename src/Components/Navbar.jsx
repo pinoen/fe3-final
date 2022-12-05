@@ -3,13 +3,14 @@ import { AppBar, Box, Button, IconButton, Toolbar, Typography } from '@mui/mater
 import NightlightIcon from '@mui/icons-material/Nightlight';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import { Link } from 'react-router-dom';
-// import { ContextGlobal } from './utils/global.context';
+import { DarkModeContext } from './utils/DarkMode';
+
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Navbar = () => {
 
-  // const { state, dispatch } = useContext(ContextGlobal)
+  const { state, dispatch } = useContext(DarkModeContext)
 
   return (
     <nav>
@@ -22,13 +23,12 @@ const Navbar = () => {
             <Button color="inherit"><Link to={"/home"}>Home</Link></Button>
             <Button color="inherit"><Link to={"/contact"}>Contact</Link></Button>
             <Button color="inherit"><Link to={"/destacados"}>Favs</Link></Button>
-            <IconButton>
-              <NightlightIcon />
+            <IconButton onClick={() => dispatch(state === '' ? { type: 'dark' } : { type: 'light' })}>
+              {state === 'dark' ? <LightModeIcon /> : <NightlightIcon />}
             </IconButton>
           </Toolbar>
         </AppBar>
       </Box>
-      {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
     </nav>
   )
 }
