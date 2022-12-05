@@ -19,8 +19,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/destacados" element={<Favs />} />
         </Routes>
-        <Footer />
       </BrowserRouter>
+      <Footer />
     </div>
   );
 }

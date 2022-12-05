@@ -1,14 +1,22 @@
-import { createContext } from "react";
+import { createContext, useReducer } from "react";
 
-export const initialState = {theme: "", data: []}
+export const initialState = { theme: "", data: [] }
 
 export const ContextGlobal = createContext(undefined);
 
+const reducer = (state, { type }) => {
+
+}
+
 export const ContextProvider = ({ children }) => {
-  //Aqui deberan implementar la logica propia del Context, utilizando el hook useMemo
+  const [state, dispatch] = useReducer(reducer, initialState)
+  const store = {
+    state,
+    dispatch
+  }
 
   return (
-    <ContextGlobal.Provider value={{}}>
+    <ContextGlobal.Provider value={store}>
       {children}
     </ContextGlobal.Provider>
   );

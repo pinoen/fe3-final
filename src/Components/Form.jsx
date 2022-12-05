@@ -7,7 +7,6 @@ import styles from '../Styles/styles.module.css'
 
 
 const Form = () => {
-  //Aqui deberan implementar el form completo con sus validaciones
 
   const [isSubmit, setIsSubmit] = useState(false)
 
@@ -28,7 +27,6 @@ const Form = () => {
 
   return (
     <div>
-      <Typography variant='h5' color={"primary"} align="center" >Contact us!</Typography>
       <form className={styles.formContainer} onSubmit={handleSubmit}>
         <Grid
           container

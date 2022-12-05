@@ -1,4 +1,4 @@
-import { Card, CardActions, CardContent, Typography } from "@mui/material";
+import { Button, Card, CardActions, CardContent, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -44,8 +44,9 @@ const DentistCard = ({ name, username, id }) => {
         <CardActions sx={{ display: 'flex', justifyContent: 'space-between' }}>
           <Link to={`/dentist/${id}`}>See details</Link>
         </CardActions>
+        <Button onClick={addFav} className="favButton">Add fav</Button>
       </Card>
-      <button onClick={addFav} className="favButton">Add fav</button>
+
     </div>
   );
 };
