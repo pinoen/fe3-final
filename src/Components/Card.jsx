@@ -1,6 +1,7 @@
-import { Button, Card, CardActions, CardContent, Typography } from "@mui/material";
+import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
+import picture from '../images/doctor.jpg'
 
 
 const DentistCard = ({ name, username, id }) => {
@@ -24,9 +25,15 @@ const DentistCard = ({ name, username, id }) => {
   }
 
   return (
-    <div className="card">
-      <Card sx={{ minWidth: 275 }}>
+    <div className="card-grid">
+      <Card className="card" sx={{ minWidth: 275 }}>
         <CardContent>
+          <CardMedia
+            component="img"
+            alt="doctor"
+            height="140"
+            image={picture}
+          />
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
             Dentist ID: {id}
           </Typography>

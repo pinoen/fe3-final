@@ -23,11 +23,19 @@ h1{
   text-align: center;
 }
 
+h2{
+  margin: 2rem;
+}
+p{
+  margin: 2rem;
+}
+
 nav{
   display: flex;
   width: 80vw;
   justify-content: flex-start;
   padding: 1rem;
+  margin: 2rem;
 }
 
 a{
@@ -42,12 +50,10 @@ a:hover{
 
 footer {
   display: flex;
-  justify-content: center;
-  text-align: center;
+  justify-content: space-between;
   padding: 2rem;
   position: relative;
   bottom: 0;
-  width: 90%;
   height: 40px;
   margin-top: 2rem;
 }
@@ -72,8 +78,8 @@ form{
 
 .card{
   display: flex;
-  justify-content: space-around;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   width: 200px;
   padding: 0.5rem 0.5rem 0 0.5rem;
@@ -86,9 +92,10 @@ form{
 
 .card-grid{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
-  width: 90vw;
+  width: auto;
   height: auto;
   flex-wrap: wrap;
   margin: 0 auto;
@@ -121,7 +128,7 @@ tr:nth-child(even) {
   color: white;
 }
 
-.formContainer{
+.form-container{
   border: 1px solid black;
   display: flex;
   flex-direction: column;
@@ -130,4 +137,9 @@ tr:nth-child(even) {
   justify-content: space-evenly;
   align-items: center;
   margin: 20px 0;
+}
+
+.social{
+  display: flex;
+  gap: 15px;
 }

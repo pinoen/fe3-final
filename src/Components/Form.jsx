@@ -3,7 +3,6 @@ import { Button, Grid, TextField, Typography } from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
 import { useFormik } from "formik";
 import * as Yup from 'yup'
-import styles from '../Styles/styles.module.css'
 
 
 const Form = () => {
@@ -27,7 +26,7 @@ const Form = () => {
 
   return (
     <div>
-      <form className={styles.formContainer} onSubmit={handleSubmit}>
+      <form className='form-container' onSubmit={handleSubmit}>
         <Grid
           container
           alignItems={"center"}
