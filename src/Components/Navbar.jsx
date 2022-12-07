@@ -15,7 +15,7 @@ const Navbar = () => {
   return (
     <nav>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="fixed">
+        <AppBar color='primary' position="fixed">
           <Toolbar>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               DH Odonto
