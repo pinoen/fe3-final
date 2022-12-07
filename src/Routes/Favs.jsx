@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "../Components/Card";
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+
 
 const Favs = () => {
 
@@ -10,8 +10,8 @@ const Favs = () => {
   return (
     <>
       <h1>Dentists Favs</h1>
-      <div className="card-grid">
-        {favourites.map(dentist =>
+      {<div className="card-grid">
+        {favourites && favourites.map(dentist =>
           <Card
             key={dentist.id}
             id={dentist.id}
@@ -19,8 +19,7 @@ const Favs = () => {
             username={dentist.username}
           />
         )}
-        {/* Deberan renderizar una Card por cada uno de ellos */}
-      </div>
+      </div>}
     </>
   );
 };
