@@ -3,9 +3,6 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
-
 const Detail = () => {
 
   const [info, setInfo] = useState([])
@@ -21,9 +18,9 @@ const Detail = () => {
   return (
     <>
       <h1>Detail Dentist id </h1>
-      <Card sx={{ minWidth: 275, display: 'flex', justifyContent: 'center' }}>
+      <Card sx={{ minWidth: 275, display: 'flex', justifyContent: 'center', marginTop: '5rem', border: '1px solid grey' }}>
         <CardContent>
-          <Typography variant="h5" component="div">
+          <Typography variant="h4" component="div">
             {info.name}
           </Typography>
           <Typography sx={{ mb: 1.5 }} color="text.secondary">
@@ -34,9 +31,6 @@ const Detail = () => {
           </Typography>
           <Typography variant="body2">
             Username: {info.username}
-          </Typography>
-          <Typography variant="body2">
-            Address: {info.address.street} {info.address.suite} - {info.address.city}, {info.address.zipcode}
           </Typography>
           <Typography variant="body2">
             Phone: {info.phone}

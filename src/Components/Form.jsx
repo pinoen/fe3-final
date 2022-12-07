@@ -65,8 +65,8 @@ const Form = () => {
           </Grid>
         </Grid>
         <Button size='large' type='submit' variant='contained' endIcon={<SendIcon />}>Submit</Button>
+        {isSubmit ? <Typography variant='h5' color={"primary"} align="center">Thanks {values.name}, we'll contact you as soon as possible by email</Typography> : null}
       </form>
-      {isSubmit ? <Typography variant='h5' color={"primary"} align="center">Thanks {values.name}, we'll contact you as soon as possible by email</Typography> : null}
     </div>
   );
 };
