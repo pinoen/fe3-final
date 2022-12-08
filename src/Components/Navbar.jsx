@@ -3,14 +3,11 @@ import { AppBar, Box, Button, IconButton, Toolbar, Typography } from '@mui/mater
 import NightlightIcon from '@mui/icons-material/Nightlight';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import { Link } from 'react-router-dom';
-import { DarkModeContext } from './utils/DarkMode';
-
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+import { GlobalContext } from './utils/global.context';
 
 const Navbar = () => {
 
-  const { state, dispatch } = useContext(DarkModeContext)
+  const { state, dispatch } = useContext(GlobalContext)
 
   return (
     <nav>

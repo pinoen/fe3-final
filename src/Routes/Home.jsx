@@ -1,24 +1,16 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import Card from '../Components/Card'
+import { GlobalContext } from '../Components/utils/global.context'
 
 const Home = () => {
 
-  const [dentists, setDentist] = useState([])
-
-  useEffect(() => {
-    axios.get('https://jsonplaceholder.typicode.com/users')
-      .then(res => setDentist(res.data))
-      .catch(err => console.log(err))
-  }, [])
-
-  console.log(dentists)
+  const { data } = useContext(GlobalContext)
 
   return (
     <main className="" >
       <h1>Home</h1>
       <div className='card-grid'>
-        {dentists.map(dentist => (
+        {data.map(dentist => (
           <Card
             key={dentist.id}
             id={dentist.id}

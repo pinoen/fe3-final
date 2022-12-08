@@ -1,19 +1,13 @@
 import { Card, CardContent, Typography } from '@mui/material'
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
+import { GlobalContext } from '../Components/utils/global.context'
 
 const Detail = () => {
 
-  const [info, setInfo] = useState([])
-
+  const { data } = useContext(GlobalContext)
   let { id } = useParams()
-
-  useEffect(() => {
-    axios.get(`https://jsonplaceholder.typicode.com/users/${id}`)
-      .then(res => setInfo(res.data))
-      .catch(err => console.log(err))
-  }, [id])
+  let info = data.find(dentist => dentist.id == id)
 
   return (
     <>
@@ -43,7 +37,6 @@ const Detail = () => {
           </Typography>
         </CardContent>
       </Card>
-      {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
     </>
   )
 }
