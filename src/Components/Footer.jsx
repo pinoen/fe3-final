@@ -8,12 +8,12 @@ import whatsapp from '../images/ico-whatsapp.png'
 const Footer = () => {
   return (
     <footer>
-      <p>Powered by</p><img src={DHLogo} alt='DH-logo' />
+      <p>Powered by</p><a href='https:/www.digitalhouse.com' target='_blank' rel="noreferrer"><img id='logoDH' src={DHLogo} alt='DH-logo' /></a>
       <div className='social'>
-        <img src={facebook} alt='Facebook-icon' />
-        <img src={instagram} alt='Instagram-icon' />
-        <img src={tiktok} alt='Tiktok-icon' />
-        <img src={whatsapp} alt='Whatsapp-icon' />
+        <a href='https:/www.facebook.com' target='_blank' rel="noreferrer"><img src={facebook} alt='Facebook-icon' /></a>
+        <a href='https:/www.instagram.com' target='_blank' rel="noreferrer"><img src={instagram} alt='Facebook-icon' /></a>
+        <a href='https:/www.tiktok.com' target='_blank' rel="noreferrer"><img src={tiktok} alt='Facebook-icon' /></a>
+        <a href='https:/www.whatsapp.com' target='_blank' rel="noreferrer"><img src={whatsapp} alt='Facebook-icon' /></a>
       </div>
     </footer>
   )
