@@ -19,7 +19,6 @@ const Form = () => {
       email: Yup.string().email().required(),
     }),
     onSubmit: (data) => {
-      console.log(data);
       setIsSubmit(prev => !prev)
     }
   })
