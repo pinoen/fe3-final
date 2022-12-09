@@ -2,6 +2,8 @@ import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@
 import React from "react";
 import { Link } from "react-router-dom";
 import picture from '../images/doctor.jpg'
+import Swal from 'sweetalert2'
+
 
 
 const DentistCard = ({ name, username, id }) => {
@@ -22,6 +24,12 @@ const DentistCard = ({ name, username, id }) => {
     data.push(dentistData)
 
     localStorage.setItem('favs', JSON.stringify(data))
+
+    Swal.fire(
+      'Added it!',
+      `Dentist ${name} has been added to your fav list`,
+      'success'
+    )
   }
 
   return (

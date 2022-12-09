@@ -21,8 +21,8 @@ code {
 
 h1{
   text-align: center;
-  margin-top: 3rem;
-  margin-bottom: 4rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 h2{
@@ -47,8 +47,8 @@ a{
   cursor: pointer;
 }
 a:hover{
-  color: rgb(136, 136, 136);
-  transform:scale(1.1);
+  color: rgb(142, 46, 46);
+  transform:scale(1.2);
   font-weight: bolder;
 } 
 
@@ -95,6 +95,7 @@ form{
   width: 200px;
   padding: 0.5rem 0.5rem 0 0.5rem;
   border: 0.5px solid rgb(136, 136, 136);
+  margin-top: 20px;
 }
 
 .card:hover{
@@ -155,6 +156,15 @@ tr:nth-child(even) {
   display: flex;
   margin-right: 100px;
   gap: 15px;
+}
+
+.favs-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items:flex-start;
+  width: 100vw;
+  margin: 20px;
 }
 
 @media(max-width: 600px) {
