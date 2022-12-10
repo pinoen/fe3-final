@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import picture from '../images/doctor.jpg'
 import Swal from 'sweetalert2'
 
-
-
 const DentistCard = ({ name, username, id }) => {
 
   const addFav = () => {
